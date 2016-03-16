@@ -7,7 +7,7 @@
 - Inicio: 22-MAR-2016
 - Dirección: https://goo.gl/maps/98vwAt9NZMU2
 - Contenido: http://www.sistemasuni.edu.pe/dcursos/cjavadesapliweb.html
-- Página: http://gcoronelc.github.io/SISTUNI_JAVA_WEB_001/
+- Página: http://gcoronelc.github.io/SISTUNI_JAVA_WEB_002/
 
 # DOCENTE
 
