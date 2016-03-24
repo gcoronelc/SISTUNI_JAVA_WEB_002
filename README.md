@@ -4,7 +4,7 @@
 
 - Lugar: SistemasUNI
 - Horario: MARTES y JUEVES de 8 a 13 Horas
-- Inicio: 22-MAR-2016
+- Inicio: 29-MAR-2016
 - Dirección: https://goo.gl/maps/98vwAt9NZMU2
 - Contenido: http://www.sistemasuni.edu.pe/dcursos/cjavadesapliweb.html
 - Página: http://gcoronelc.github.io/SISTUNI_JAVA_WEB_002/
@@ -30,12 +30,15 @@
 
 # CLASE 01
 
-- Fecha: 22-MAR-2016
+- Fecha: 29-MAR-2016
 - Introducción a Git
 - Servlets
 - JSP
 - MVC
 
+# CLASE 02
+
+- Fecha: 31-MAR-2016
 
 
 
