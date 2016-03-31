@@ -51,7 +51,7 @@ public class ClienteController extends HttpServlet {
     
     // Dispacher
     request.setAttribute("lista", lista);
-    RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+    RequestDispatcher rd = request.getRequestDispatcher("conClientes.jsp");
     rd.forward(request, response);
 
   }

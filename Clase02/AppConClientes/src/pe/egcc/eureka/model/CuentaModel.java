@@ -23,4 +23,16 @@ public class CuentaModel {
     return daoCuenta.conMovimientos(cuenta);
   }
 
+  public void registrarDeposito(String cuenta, double importe, String codEmp) {
+    if(cuenta.isEmpty()){
+      throw new RuntimeException("Cuenta no puede estar vacía");
+    }
+    if(codEmp == null || codEmp.isEmpty()){
+      throw new RuntimeException("Debe iniciar sesión");
+    }
+    if(importe <= 0.0){
+      throw new RuntimeException("Importe incorrecto.");
+    }
+    daoCuenta.registrarDeposito(cuenta, importe, codEmp);
+  }
 }

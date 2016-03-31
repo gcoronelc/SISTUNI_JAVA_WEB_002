@@ -1,51 +1,39 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>CONSULTAR CLIENTES</title>
+<title>Insert title here</title>
+<style type="text/css">
+	#LOGON{
+		width: 400px;
+		background-color: white;
+		margin: 10px auto;
+		padding: 10px;
+	}
+</style>
 </head>
-<body>
-	<h1>CONSULTAR CLIENTES</h1>
-	<form method="post" action="ClienteConsultar">
-	<table>
-		<tr>
-			<td>PATERNO</td>
-			<td>MATERNO</td>
-			<td>NOMBRE</td>
-			<td rowspan="2" valign="bottom"><input type="submit" value="Consultar"/></td>
-		</tr>
-		<tr>
-			<td><input type="text" name="paterno" /></td>
-			<td><input type="text" name="materno" /></td>
-			<td><input type="text" name="nombre" /></td>
-		</tr>
-	</table>
-	</form>
-	
-	<!-- APLICANDO JSTL -->	
-	<c:if test="${lista != null}">
-		<h2>RESULTADO DE LA CONSULTA</h2>
+<body bgcolor="blue">
+	<div id="LOGON">
+		<h1>INICIO DE SESION</h1>
+		<form method="post" action="LogonIngresar">
 		<table>
 			<tr>
-				<th>CODIGO</th>
-				<th>PATERNO</th>
-				<th>MATERNO</th>
-				<th>NOMBRE</th>
-			</tr>	
-			<c:forEach items="${lista}" var="r">
-			<tr>
-				<td>${r.codigo}</td>
-				<td>${r.paterno}</td>
-				<td>${r.materno}</td>
-				<td>${r.nombre}</td>
+				<td rowspan="3"><img alt="" src="img/logon.png"> </td>
+				<td>Usuario: </td>
+				<td><input type="text" name="usuario" /></td>
 			</tr>
-			</c:forEach>
+			<tr>
+				<td>Clave: </td>
+				<td><input type="password" name="clave" /></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center"><input type="submit" value="Ingresar" /></td>
+			</tr>
 		</table>
-	</c:if>
-	
+		<p>Error: ${error}</p>
+		</form>
+	</div>
 </body>
 </html>

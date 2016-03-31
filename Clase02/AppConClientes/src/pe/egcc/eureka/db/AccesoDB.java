@@ -19,7 +19,7 @@ public final class AccesoDB {
       // Paso 1: Cargar el driver a memoria 
       Class.forName("oracle.jdbc.OracleDriver").newInstance(); 
       // Paso 2: Obtener el objeto Connection 
-      String url = "jdbc:oracle:thin:@172.17.3.101:1521:XE"; 
+      String url = "jdbc:oracle:thin:@172.17.1.219:1521:XE"; 
       cn = DriverManager.getConnection(url, "eureka", "admin"); 
     } catch (SQLException e) { 
       throw e; 
