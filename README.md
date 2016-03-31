@@ -29,6 +29,8 @@
 - Portal de cursos virtuales: http://www.librosdigitales.net
 - Artículo de Git: http://www.desarrolloweb.com/articulos/entiende-instala-configura-git.html
 - Curso de Git y GitHub: https://www.youtube.com/watch?v=NmbqlkLTOSI
+- Separatas de Java: http://courses.coreservlets.com/Course-Materials/pdf/
+- Material de Java: http://courses.coreservlets.com/Course-Materials/pdf/ajax/
 
 # CLASE 01
 
