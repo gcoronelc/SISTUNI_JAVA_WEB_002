@@ -50,4 +50,30 @@ public class DaoCuentaImpl implements DaoCuentaEspec {
     return lista;
   }
 
+  @Override
+  public void registrarDeposito(String cuenta, double importe, String codEmp) {
+    Connection cn = null;
+    try {
+      // Iniciar Tx
+      cn = AccesoDB.getConnection();
+      cn.setAutoCommit(false);
+      
+      
+      
+      // Confirmar Tx
+      cn.commit();
+    } catch (Exception e) {
+      try {
+        cn.rollback();
+      } catch (Exception e2) {
+      }
+      
+    } finally{
+      try {
+        cn.close();
+      } catch (Exception e2) {
+      }
+    }
+  }
+
 }

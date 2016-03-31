@@ -11,4 +11,7 @@ public interface DaoCuentaEspec {
   
   List<Map<String,?>> conMovimientos(String cuenta);
   
+  void registrarDeposito(String cuenta, double importe, String codEmp);
+  
+  
 }
