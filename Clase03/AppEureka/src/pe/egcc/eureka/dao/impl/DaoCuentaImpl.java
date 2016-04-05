@@ -22,8 +22,11 @@ public class DaoCuentaImpl implements DaoCuentaEspec {
     Connection cn = null;
     try {
       cn = AccesoDB.getConnection();
-      String sql = "select CUENCODIGO,MONENOMBRE,CUENSALDO, " + "CUENESTADO,MOVINUMERO,MOVIFECHA, "
-          + "MOVIIMPORTE,TIPOCODIGO,TIPONOMBRE " + "from v_movimiento " + "where CUENCODIGO = ?";
+      String sql = "select CUENCODIGO,MONENOMBRE,CUENSALDO, " 
+          + "CUENESTADO,MOVINUMERO,MOVIFECHA, "
+          + "MOVIIMPORTE,TIPOCODIGO,TIPONOMBRE " 
+          + "from v_movimiento " 
+          + "where CUENCODIGO = ?";
       PreparedStatement pstm = cn.prepareStatement(sql);
       pstm.setString(1, cuenta);
       ResultSet rs = pstm.executeQuery();

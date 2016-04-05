@@ -19,7 +19,7 @@
 			<ul>
 				<li><a href="javascript: loadPage('conClientes.jsp')">Clientes</a></li>
 				<li><a href="#">Cuentas</a></li>
-				<li><a href="#">Movimientos</a></li>
+				<li><a href="javascript: loadPage('conMovimientos.jsp')">Movimientos</a></li>
 			</ul></li>
 		<li><a href="#">Reportes</a>
 			<ul>
