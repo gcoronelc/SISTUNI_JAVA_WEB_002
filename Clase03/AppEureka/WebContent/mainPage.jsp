@@ -29,13 +29,12 @@
 	</div>
 	
 	<div id="_CONTENIDO">
- 		<img alt="" src="img/eureka.jpg">	
+		<div style="width: 100%; text-align: center;">
+ 		<img alt="" src="img/eureka.jpg">
+ 		</div>	
 	</div>
 
-
 </div>
-
-
 
 
 </body>
