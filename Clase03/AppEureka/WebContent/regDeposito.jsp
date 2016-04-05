@@ -8,9 +8,7 @@
 </head>
 <body>
 	<h1>REGISTRAR DEPOSITO</h1>
-	<p>Mensaje: ${mensaje}</p>
-	<p>Error: ${error}</p>
-	<form method="post" action="CuentaDeposito">
+	<form id="form1">
 		<table>
 		<tr>
 			<td>Cuenta: </td>
@@ -18,10 +16,22 @@
 		</tr>
 		<tr>
 			<td>Importe</td>
-			<td><input type="text" name="importe" /></td>
+			<td><input type="number" name="importe" /></td>
 		</tr>
 	</table>
-	<input type="submit" value="Procesar" /></td>	
+	<input type="button" id="btnProcesar" value="Procesar" /></td>	
 	</form>
+	
+	<script type="text/javascript">
+	
+		$("#btnProcesar").click(function(){
+			var data = $("#form1").serialize();
+			$.post("CuentaDeposito",data,function(rpta){
+				alert(rpta.texto);				
+			});
+
+		});
+			
+	</script>
 </body>
 </html>

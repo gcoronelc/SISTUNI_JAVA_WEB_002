@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" type="text/css" href="css/estilos.css">
 <link rel="stylesheet" type="text/css" href="menu/menu.css">
+<script type="text/javascript" src="jquery/jquery.js"></script>
 <title>APP EUREKA</title>
 </head>
 <body>
@@ -35,7 +36,14 @@
 	</div>
 
 </div>
+<script type="text/javascript">
 
+function loadPage(page){
+	$("#_CONTENIDO").load(page);
+}
+
+
+</script>
 
 </body>
 </html>

@@ -4,7 +4,7 @@
 		<li><a href="#">Procesos</a>
 			<ul>
 				<li><a href="#">Apertura de cuenta</a></li>
-				<li><a href="#">Depósito</a></li>
+				<li><a href="javascript: loadPage('regDeposito.jsp')">Depósito</a></li>
 				<li><a href="#">Retiro</a></li>
 				<li><a href="#">Transferencia</a></li>
 				<li><a href="#">Cierre de cuenta</a></li>

@@ -1,6 +1,7 @@
 package pe.egcc.eureka.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,7 +11,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.google.gson.Gson;
+
 import pe.egcc.eureka.domain.Empleado;
+import pe.egcc.eureka.dto.Mensaje;
 import pe.egcc.eureka.model.CuentaModel;
 
 @WebServlet({ "/CuentaDeposito", "/CuentaRetiro" })
@@ -39,6 +43,7 @@ public class CuentaController extends HttpServlet {
 
   private void cuentaDeposito(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
+    Mensaje mensaje;
     try {
       // Datos
       String cuenta = request.getParameter("cuenta");
@@ -47,14 +52,19 @@ public class CuentaController extends HttpServlet {
       Empleado bean = (Empleado) request.getSession().getAttribute("usuario");
       // Proceso
       cuentaModel.registrarDeposito(cuenta, importe, bean.getCodigo());
-      String mensaje = "La operación se realizó con exito.";
-      request.setAttribute("mensaje", mensaje);
+      mensaje = new Mensaje(1, "La operación se realizó con exito.");
     } catch (Exception e) {
-      request.setAttribute("error", e.getMessage());
+      mensaje = new Mensaje(-1, e.getMessage());
     }
-    RequestDispatcher rd;
-    rd = request.getRequestDispatcher("regDeposito.jsp");
-    rd.forward(request, response);
+    // Retornando JSON
+    Gson gson = new Gson();
+    String textoJson = gson.toJson(mensaje);
+    //response.setContentType("text/plain;charset=UTF-8");
+    response.setContentType("application/json;charset=UTF-8");
+    PrintWriter out = response.getWriter();
+    out.println(textoJson);
+    out.flush();
+    out.close();
   }
 
 }
