@@ -1,7 +1,14 @@
 package pe.egcc.eureka.dto;
-
+/**
+ * 
+ * @author GustavoCoronel
+ *
+ */
 public class Mensaje {
 
+  /**
+   * 
+   */
   private int codigo;
   private String texto;
 

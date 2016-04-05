@@ -23,20 +23,31 @@ public class CuentaController extends HttpServlet {
   private static final long serialVersionUID = 1L;
 
   private CuentaModel cuentaModel;
+  private ResponseClient responseClient;
 
   @Override
   public void init() throws ServletException {
     cuentaModel = new CuentaModel();
+    responseClient = new ResponseClient();
   }
 
   @Override
   protected void service(HttpServletRequest request, HttpServletResponse response)
       throws ServletException, IOException {
 
-    String path = request.getServletPath();
+    if (request.getSession().getAttribute("usuario") == null) {
+      
+      Mensaje mensaje = new Mensaje(-100, "Debe iniciar sesión.");
+      responseClient.response(request, response, mensaje);
+    
+    } else {
 
-    if (path.equals("/CuentaDeposito")) {
-      cuentaDeposito(request, response);
+      String path = request.getServletPath();
+
+      if (path.equals("/CuentaDeposito")) {
+        cuentaDeposito(request, response);
+      }
+    
     }
 
   }
@@ -56,15 +67,17 @@ public class CuentaController extends HttpServlet {
     } catch (Exception e) {
       mensaje = new Mensaje(-1, e.getMessage());
     }
+    /*
     // Retornando JSON
     Gson gson = new Gson();
     String textoJson = gson.toJson(mensaje);
-    //response.setContentType("text/plain;charset=UTF-8");
+    // response.setContentType("text/plain;charset=UTF-8");
     response.setContentType("application/json;charset=UTF-8");
     PrintWriter out = response.getWriter();
     out.println(textoJson);
     out.flush();
-    out.close();
+    out.close();*/
+    responseClient.response(request, response, mensaje);
   }
 
 }
