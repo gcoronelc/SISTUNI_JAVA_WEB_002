@@ -25,7 +25,7 @@
 			<ul>
 				<li><a href="#">Clientes</a></li>
 				<li><a href="#">Cuentas</a></li>
-				<li><a href="#">Movimientos</a></li>
+				<li><a href="javascript: loadPage('repoMovimientos.jsp')">Movimientos</a></li>
 			</ul></li>
 		<li><a href="#">Utilidades</a>
 			<ul>
