@@ -37,7 +37,7 @@
 			var data = $("#form1").serialize();
 			$.post("ClienteConsultar",data,function(objJson){
 				if(objJson.codigo == 1){
-					var varTabla = "<br/><table border='1'>";
+					var varTabla = "<table>";
 					varTabla += "<tr>";
 					varTabla += "<th>CODIGO</th>";
 					varTabla += "<th>PATERNO</th>";
@@ -61,7 +61,6 @@
 						varTabla += "</tr>";
 					});
 					
-					
 					varTabla += "</table>";
 					$("#egcc_contenido").html(varTabla);
 				} else {
@@ -70,6 +69,10 @@
 			});
 		});
 	
+		$("#btnExcel").click(function (e) {
+		    window.open('data:application/vnd.ms-excel,' + $('#egcc_contenido').html());
+		    e.preventDefault();
+		});
 	</script>
 </body>
 </html>
