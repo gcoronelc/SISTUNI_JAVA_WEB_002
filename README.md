@@ -1,6 +1,4 @@
 ![Java Web](https://raw.githubusercontent.com/gcoronelc/SISTUNI_JAVA_WEB_002/master/JavaWeb.png)
-![Java Web](https://raw.githubusercontent.com/gcoronelc/SISTUNI_JAVA_WEB_002/master/promocion.jpg)
-
 
 # DESARROLLADOR DE APLICACIONES WEB
 
@@ -44,5 +42,16 @@
 
 - Fecha: 31-MAR-2016
 
+# CLASE 03
+
+- Fecha: 05-ABR-2016
+
+# CLASE 04
+
+- Fecha: 12-ABR-2016
+
+# CLASE 05
+
+- Fecha: 14-ABR-2016
 
 
