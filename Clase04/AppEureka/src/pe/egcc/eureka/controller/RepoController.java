@@ -42,26 +42,29 @@ public class RepoController extends HttpServlet {
   }
 
   private void repoMovimientos(HttpServletRequest request, HttpServletResponse response) {
-    try {
-      // Flujo de salida del reporte
-      response.setContentType("application/pdf");
-      ServletOutputStream outRepo = response.getOutputStream();
+    try { 
       // Parámetros
       String cuenta = request.getParameter("cuenta");
-
       // Obteniendo Datos
       List<Map<String, ?>> lista = cuentaModel.traerMovimientos(cuenta);
+      System.err.println("Filas: " + lista.size());
       JRMapCollectionDataSource jrData;
       jrData = new JRMapCollectionDataSource(lista);
       // Parametros
       Map pars = new HashMap<>();
       // El reporte
       String fileRepo = "/pe/egcc/eureka/reports/repoMovimientos.jasper";
-      InputStream ioRepo = Class.class.getResourceAsStream(fileRepo);
-      JasperRunManager.runReportToPdfStream(ioRepo, outRepo, pars, jrData);
-      outRepo.flush();
-      outRepo.close();
+      InputStream inRepo = getClass().getResourceAsStream(fileRepo);
+      byte[] bytes = JasperRunManager.runReportToPdf(inRepo, pars, jrData);     
+      // Enviar el reporte al browser
+      response.setContentType("application/pdf");
+      response.setContentLength(bytes.length);
+      ServletOutputStream out = response.getOutputStream();
+      out.write(bytes, 0, bytes.length);
+      out.flush();
+      out.close();
     } catch (Exception e) {
+      e.printStackTrace();
     }
   }
 

@@ -9,7 +9,7 @@
 <body>
 	<div>
 		<h1>REPORTE DE MOVIMIENTOS</h1>
-		<form id="form1">
+		<form id="form2">
 			Cuenta: 
 			<input type="text" name="cuenta" />
 			<input type="button" id="btnConsultar" value="Consultar" />
@@ -21,7 +21,10 @@
 	<script type="text/javascript">
 	
 		$("#btnConsultar").click(function(){
-			$("#egcc_contenido").text("Falta implementar")	
+			var data = $("#form2").serialize();
+			var urlRepo = "RepoMovimientos?" + data;
+			var html = "<object width='100%' height='600' data='" + urlRepo + "'></object>";
+			$("#egcc_contenido").html(html);	
 		});
 	
 	</script>
