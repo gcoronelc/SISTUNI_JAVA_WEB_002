@@ -9,12 +9,12 @@
 </head>
 <body>
 	<h1>${accion} CLIENTE</h1>
-	<form id="form1">
+	<form id="formCliente">
 		<input type="hidden" name="accion" value="${accion}" />
 		<table>
 			<tr>
-				<td>Código</td>
-				<td>${cliente.codigo}<input type="hidden" name="codigo"/></td>
+				<td width="100">Código</td>
+				<td>${cliente.codigo}<input type="hidden" name="codigo" value="${cliente.codigo}"/></td>
 			</tr>
 			<tr>
 				<td>Paterno</td>
@@ -74,7 +74,16 @@
 			</tr>
 			
 		</table>
+		
+		<input type="button" value="Procesar" id="btnProcesar" />
 	</form>
-	
+	<script type="text/javascript">
+		$("#btnProcesar").click(function(){
+			var data = $("#formCliente").serialize();
+			$.post("ClienteProcesar",data,function(objJson){
+				alert(objJson.texto);
+			});
+		});
+	</script>
 </body>
 </html>

@@ -51,9 +51,56 @@ public class ClienteController extends HttpServlet {
         clienteNuevo(request, response);
       } else if (path.equals("/ClienteEliminar")) {
         clienteEliminar(request, response);
+      } else if (path.equals("/ClienteEditar")) {
+        clienteEditar(request, response);
+      } else if (path.equals("/ClienteProcesar")) {
+        clienteProcesar(request, response);
       }
 
     }
+  }
+
+  private void clienteProcesar(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    Mensaje mensaje;
+    try {
+      String accion = request.getParameter("accion");
+      Cliente cliente = new Cliente();
+      cliente.setCodigo(request.getParameter("codigo"));
+      if(!accion.equals(EurekaUtil.CRUD_ACCION_ELIMINAR)){
+        cliente.setPaterno(request.getParameter("paterno"));
+        cliente.setMaterno(request.getParameter("materno"));
+        cliente.setNombre(request.getParameter("nombre"));
+        cliente.setDni(request.getParameter("dni"));
+        cliente.setCiudad(request.getParameter("ciudad"));
+        cliente.setDireccion(request.getParameter("direccion"));
+        cliente.setTelefono(request.getParameter("telefono"));
+        cliente.setEmail(request.getParameter("email"));
+      }
+      switch (accion) {
+      case EurekaUtil.CRUD_ACCION_NUEVO:
+        clienteModel.insert(cliente);
+        break;
+      case EurekaUtil.CRUD_ACCION_EDITAR:
+        clienteModel.update(cliente);
+        break;
+      case EurekaUtil.CRUD_ACCION_ELIMINAR:
+        clienteModel.delete(cliente);
+        break;
+      }
+      mensaje = new Mensaje(1, "Proceso ejecutado correctamente.");
+    } catch (Exception e) {
+      mensaje = new Mensaje(-1, e.getMessage());
+    }
+    responseClient.response(request, response, mensaje);
+  }
+
+  private void clienteEditar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    String codigo = request.getParameter("codigo");
+    Cliente bean = clienteModel.getCliente(codigo);
+    request.setAttribute("cliente", bean);
+    request.setAttribute("accion", EurekaUtil.CRUD_ACCION_EDITAR);
+    RequestDispatcher rd = request.getRequestDispatcher("editarCliente.jsp");
+    rd.forward(request, response);
   }
 
   private void clienteEliminar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

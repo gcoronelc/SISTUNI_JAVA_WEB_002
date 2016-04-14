@@ -81,7 +81,8 @@
 		});
 		
 		function fnClieEditar(codigo){
-			alert("Codigo: " + codigo);
+			var urlEliminar = "ClienteEditar?codigo=" + codigo;
+			$("#egcc_contenido").load(urlEliminar);
 		}
 		
 		function fnClieEliminar(codigo){
