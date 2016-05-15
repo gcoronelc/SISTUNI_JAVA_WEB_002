@@ -1,6 +1,4 @@
 ![Java Web](https://raw.githubusercontent.com/gcoronelc/SISTUNI_JAVA_WEB_002/master/JavaWeb.png)
-![Java Web](https://raw.githubusercontent.com/gcoronelc/SISTUNI_JAVA_WEB_002/master/promocion.jpg)
-
 
 # DESARROLLADOR DE APLICACIONES WEB
 
@@ -29,6 +27,8 @@
 - Portal de cursos virtuales: http://www.librosdigitales.net
 - Artículo de Git: http://www.desarrolloweb.com/articulos/entiende-instala-configura-git.html
 - Curso de Git y GitHub: https://www.youtube.com/watch?v=NmbqlkLTOSI
+- Separatas de Java: http://courses.coreservlets.com/Course-Materials/pdf/
+- Material de Java: http://courses.coreservlets.com/Course-Materials/pdf/ajax/
 
 # CLASE 01
 
@@ -42,5 +42,16 @@
 
 - Fecha: 31-MAR-2016
 
+# CLASE 03
+
+- Fecha: 05-ABR-2016
+
+# CLASE 04
+
+- Fecha: 12-ABR-2016
+
+# CLASE 05
+
+- Fecha: 14-ABR-2016
 
 

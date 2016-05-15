@@ -1,0 +1,47 @@
+@CHARSET "ISO-8859-1";
+
+BODY{
+	background-color: #82A5DB;
+	font-family: sans-serif;
+	font-size: 11px;
+}
+
+#_PAGINA{
+	background-color: #B8F4BE;
+	margin: 10px auto;
+	padding: 10px;
+	width: 920px;
+}
+
+#_CABECERA{
+	background-color: white;
+	margin: 10px;
+	padding: 10px;
+}
+
+#_MENU{
+	background-color: #D7DADC;
+	margin: 10px;
+	padding: 10px;
+}
+
+#_CONTENIDO{
+	background-color: white;
+	margin: 10px;
+	padding: 10px;
+}
+
+
+H1{
+	font-family: sans-serif;
+	font-size: 18px;
+	color: #06B0FA;
+	border-bottom: 2px solid #06B0FA; 
+}
+
+H2{
+	font-family: sans-serif;
+	font-size: 14px;
+	color: #0C4E07;
+	border-bottom: 2px solid #0C4E07; 
+}
